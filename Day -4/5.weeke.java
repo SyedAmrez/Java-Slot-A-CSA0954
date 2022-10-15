@@ -23,7 +23,10 @@ public class weeke
     	}
 	public static void main(String[] args)
 	{
-		int i,j,n=5,c;
+		try
+		{
+		int i,j,n=5,c,k;
+		List<Integer>prin_t=new ArrayList<>();
 		int a[][]=new int[n][n];
 		int x[]=new int[n];
 		Scanner s=new Scanner(System.in);
@@ -35,6 +38,8 @@ public class weeke
 				a[i][j]=s.nextInt();
 			}
 		}
+		System.out.print("Enter k: ");
+		k=s.nextInt();
 		for(i=0;i<n;i++)
 		{
 			c=0;
@@ -63,9 +68,19 @@ public class weeke
         		}
     		}
 		System.out.println("\nWeakest row = "+index);
-		/*sol finder = new sol();
+		weeke finder = new weeke();
         	int[] indixes = finder.orderIndexAscending(x);
-        	System.out.println("Indexes of the array in ascending order: " +
-                            Arrays.toString(indixes));*/
+        	System.out.println("Indexes of the array in ascending order: "+Arrays.toString(indixes));
+		for(i=0;i<k;i++)
+		{
+			prin_t.addAll(Arrays.asList(indixes[i]));
+		}
+		System.out.println(prin_t);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Invalid");
+			System.out.println(e);
+		}
     	}
 }
